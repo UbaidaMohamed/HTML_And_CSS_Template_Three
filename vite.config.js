@@ -12,7 +12,7 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss(),
   ],
-  base: '/AI-Revolution--Tailwindcss/',
+  base: '/Elzero/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
