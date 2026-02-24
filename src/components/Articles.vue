@@ -1,6 +1,6 @@
 <template>
     <div class="articles">
-        <h2 class="main-title" id="articles">Articles</h2>
+        <h2 class="main-title" id="articles">Articles  </h2>
         <div class="container">
             <div v-for="box in boxes" class="box">
                 <img :src="getImgSrc(box.pic)" alt="">
@@ -15,6 +15,7 @@
             </div>
         </div>
     </div>
+    <div class="spikes"></div>
 </template>
 
 <script setup>

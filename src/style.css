@@ -19,7 +19,7 @@ html {
 
 @layer base {
   body {
-    @apply bg-gray-50 dark:bg-slate-900 dark:text-slate-200 font-sans antialiased transition ease-linear duration-300;
+    @apply bg-white dark:bg-slate-900 dark:text-slate-200 font-sans antialiased transition ease-linear duration-300;
   }
   ul {
     @apply p-0 m-0;
@@ -101,10 +101,10 @@ html {
 @keyframes change-background {
   0%,
   100% {
-    background-image: url("../imgs/discount-background1.jpg");
+    background-image: url('../imgs/discount-background1.jpg');
   }
   50% {
-    background-image: url("../imgs/discount-background2.jpg");
+    background-image: url('../imgs/discount-background2.jpg');
   }
 }
 
@@ -116,21 +116,21 @@ html {
   z-index: -1;
   animation: right-move 0.5s linear forwards;
 }
-.landing .image img{
-    position: relative;
-    width: 600px;
-    animation: up-and-down 5s linear infinite;
+.landing .image img {
+  position: relative;
+  width: 600px;
+  animation: up-and-down 5s linear infinite;
 }
 .landing .go-down {
-    animation: bouncing 1.5s infinite;
+  animation: bouncing 1.5s infinite;
 }
 
-.articles .box:hover .info .arrow{
-    animation: moving-arrow 0.6s linear infinite;
+.articles .box:hover .info .arrow {
+  animation: moving-arrow 0.6s linear infinite;
 }
 
 .gallery .image:hover::before {
-    animation: flashing 0.7s;
+  animation: flashing 0.7s;
 }
 
 @layer components {
@@ -142,7 +142,24 @@ html {
   }
   .main-title::before,
   .main-title::after {
-  @apply w-3 h-3 bg-main absolute rounded-full top-1/2 transform -translate-y-1/2;
+    @apply w-3 h-3 bg-main absolute rounded-full top-1/2 transform -translate-y-1/2;
+  }
+  .spikes {
+    @apply relative
+  }
+  .spikes::after {
+    content: "";
+    @apply absolute right-0 w-full h-7.5 z-1 bg-[linear-gradient(135deg,white_25%,transparent_25%),linear-gradient(225deg,white_25%,transparent_25%)] bg-size-[50px_50px]
+  }
+  .dots-up {
+    @apply top-50 right-0
+  }
+  .dots-down {
+    @apply bottom-50 left-0
+  }
+  .dots {
+    background-image: url(imgs/dots.png);
+    @apply h-46.5 w-51 bg-no-repeat absolute
   }
   .header {
     @apply bg-white shadow-sm;
@@ -168,7 +185,8 @@ html {
   .mega-menu .image {
     @apply hidden xl:block;
   }
-  .mega-menu .link-1, .mega-menu .link-2{
+  .mega-menu .link-1,
+  .mega-menu .link-2 {
     @apply min-w-80;
   }
   .mega-menu .link-1 li {
@@ -184,25 +202,25 @@ html {
     @apply w-6 h-6 inline mr-4;
   }
   .social-icon {
-    @apply duration-300 hover:-translate-y-1;
+    @apply duration-300 hover:scale-130;
   }
   .fac {
     @apply hover:text-[#1877f2];
   }
   .tik {
-    @apply hover:text-[#ee1d52]
+    @apply hover:text-[#ee1d52];
   }
   .you {
     @apply hover:text-[#ff0000];
   }
   .in {
-    @apply hover:text-[#0a66c2]
+    @apply hover:text-[#0a66c2];
   }
   .insta {
-    @apply hover:text-[#c32aa3]
+    @apply hover:text-[#c32aa3];
   }
   .whats {
-    @apply hover:text-[#25d366]
+    @apply hover:text-[#25d366];
   }
   .landing {
     @apply relative before:absolute before:left-0 before:-top-10 before:w-full before:h-full before:bg-[#ececec] before:-z-1 before:-skew-y-6 before:origin-top-left;
@@ -223,7 +241,7 @@ html {
     @apply text-main absolute bottom-8 left-1/2 -translate-x-1/2 duration-300 hover:text-main-alt text-4xl;
   }
   .articles {
-    @apply py-25 relative;
+    @apply py-25 relative bg-white;
   }
   .articles .container {
     @apply grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
@@ -250,7 +268,7 @@ html {
     @apply py-25 relative bg-[#ececec];
   }
   .gallery .container {
-    @apply grid sm:grid-cols-2 lg:grid-cols-3 gap-10
+    @apply grid sm:grid-cols-2 lg:grid-cols-3 gap-10;
   }
   .gallery .box {
     @apply p-4 bg-white shadow-lg;
@@ -259,7 +277,7 @@ html {
     @apply relative overflow-hidden;
   }
   .gallery .image::before {
-    content: "";
+    content: '';
     @apply absolute top-1/2 left-1/2 -translate-1/2 bg-white/20 overflow-hidden w-0 h-0 opacity-0 z-1;
   }
   .gallery .image:hover img {
@@ -269,7 +287,7 @@ html {
     @apply max-w-full duration-300;
   }
   .features {
-    @apply py-10 relative bg-white; 
+    @apply py-10 relative bg-white;
   }
   .features .container {
     @apply grid sm:grid-cols-2 lg:grid-cols-3 gap-10;
@@ -281,7 +299,7 @@ html {
     @apply relative overflow-hidden;
   }
   .features .box .img-holder::before {
-    content: "";
+    content: '';
     @apply absolute top-0 left-0 w-full h-full;
   }
   .features .box img {
@@ -291,7 +309,7 @@ html {
     @apply relative text-4xl font-bold m-auto w-fit;
   }
   .features .box h2::after {
-    content: "";
+    content: '';
     @apply absolute -bottom-5 left-4 h-1 w-[calc(100%-30px)];
   }
   .features .box p {
@@ -301,18 +319,18 @@ html {
     @apply block border-3 border-black w-fit mt-0 mx-auto mb-8 font-bold text-2xl px-8 py-2 rounded;
   }
   .features .box .img-holder::after {
-    content: "";
+    content: '';
     @apply absolute bottom-0 right-0 border-[0px_0px_170px_600px] sm:border-[0px_0px_170px_500px] border-[transparent_transparent_white_transparent] duration-300;
   }
   .features .box:hover .img-holder::after {
-    content: "";
+    content: '';
     @apply border-[0px_600px_170px_0px] sm:border-[170px_500px_170px_0px] duration-300;
   }
   .features .quality .img-holder::before {
     @apply bg-red-400/30;
   }
   .features .quality h2::after {
-    @apply bg-red-400
+    @apply bg-red-400;
   }
   .features .quality a {
     @apply text-red-400 border-red-400 bg-linear-to-r from-red-400 from-50% to-white to-50% bg-size-[200%_100%] bg-bottom-right duration-300;
@@ -321,7 +339,7 @@ html {
     @apply bg-green-300/30;
   }
   .features .time h2::after {
-    @apply bg-green-300
+    @apply bg-green-300;
   }
   .features .time a {
     @apply text-green-300 border-green-300 bg-linear-to-r from-green-300 from-50% to-white to-50% bg-size-[200%_100%] bg-bottom-right duration-300;
@@ -330,12 +348,12 @@ html {
     @apply bg-sky-300/30;
   }
   .features .passion h2::after {
-    @apply bg-sky-300
+    @apply bg-sky-300;
   }
   .features .passion a {
     @apply text-sky-300 border-sky-300 bg-linear-to-r from-sky-300 from-50% to-white to-50% bg-size-[200%_100%] bg-bottom-right duration-300;
   }
-  .features .box:hover a{
+  .features .box:hover a {
     @apply bg-bottom-left text-white;
   }
   .testimonials {
@@ -348,7 +366,7 @@ html {
     @apply p-5 bg-white shadow-sm rounded relative;
   }
   .testimonials .box img {
-    @apply absolute -right-3 top-[-15%] w-30 h-30 rounded-full border-10 border-[#ececec]
+    @apply absolute -right-3 top-[-15%] w-30 h-30 rounded-full border-10 border-[#ececec];
   }
   .testimonials .box h3 {
     @apply mb-4 text-2xl font-bold mr-auto;
@@ -357,7 +375,7 @@ html {
     @apply text-gray-500 mb-3 block;
   }
   .testimonials .box p {
-    @apply leading-7
+    @apply leading-7;
   }
   .team {
     @apply py-25 relative;
@@ -377,7 +395,7 @@ html {
     @apply right-0 bg-[#e4e4e4] w-[calc(100%-60px)] -z-2;
   }
   .team .box::after {
-    @apply left-15 bg-[#f3f3f3] w-0 -z-1
+    @apply left-15 bg-[#f3f3f3] w-0 -z-1;
   }
   .team .box:hover::after {
     @apply w-[calc(100%-60px)];
@@ -386,28 +404,335 @@ html {
     @apply flex items-center pt-15;
   }
   .team .box .data img {
-    @apply w-[calc(100%-60px)] rounded-xl grayscale duration-300;
+    @apply w-[calc(100%-60px)] md:h-70 lg:h-60 rounded-xl grayscale duration-300;
   }
   .team .box:hover img {
-    @apply grayscale-0
+    @apply grayscale-0;
   }
   .team .box .data .social {
     @apply w-15 flex flex-col items-center justify-center;
   }
   .team .box .data .social a {
-    @apply h-15 md:h-8
+    @apply h-15 md:h-9;
   }
   .team .box .info {
     @apply pl-18;
   }
   .team .box .info h3 {
-    @apply mt-2 mb-0 text-gray-400 text-xl font-extrabold
+    @apply mt-2 mb-0 text-gray-400 text-xl font-extrabold;
   }
   .team .box:hover .info h3 {
     @apply text-main;
   }
   .team .box .info p {
-    @apply mt-2 mb-5
+    @apply mt-2 mb-5;
   }
-
-} 
+  .services {
+    @apply py-25 relative bg-[#ececec];
+  }
+  .services .container {
+    @apply grid md:grid-cols-2 xl:grid-cols-3 gap-10;
+  }
+  .services .box {
+    counter-increment: services;
+    @apply bg-white shadow-md duration-300 relative hover:-translate-y-3 hover:before:w-full;
+  }
+  .services .box .icon {
+    @apply w-20 h-20 mx-auto mt-8 mb-5 block text-center text-[#d5d5d5];
+  }
+  .services .box::before {
+    content: '';
+    @apply left-1/2 -translate-x-1/2 h-1 -top-1 bg-main absolute w-0 duration-300;
+  }
+  .services .box h3 {
+    @apply text-center mt-5 mx-0 mb-10 text-2xl font-bold text-main;
+  }
+  .services .box .info {
+    @apply p-3 relative bg-[#f9f9f9] text-right;
+  }
+  .services .info a {
+    @apply text-main;
+  }
+  .services .box .info::before {
+    content: '0' counter(services);
+    @apply absolute bg-main text-white left-0 top-0 h-full w-25 text-2xl font-bold flex justify-center items-center pr-4;
+  }
+  .services .box .info::after {
+    content: '';
+    @apply absolute bg-[#d5d5d5] top-0 left-20 w-15 h-[calc(100%+0.4px)] -skew-x-30;
+  }
+  .our-skills {
+    @apply py-25 relative;
+  }
+  .our-skills .container {
+    @apply flex items-center;
+  }
+  .our-skills img {
+    @apply hidden lg:block;
+  }
+  .our-skills .skill {
+    @apply mb-10;
+  }
+  .our-skills .skill h3 {
+    @apply text-2xl font-bold mb-4;
+  }
+  .our-skills .skills {
+    @apply flex-1;
+  }
+  .our-skills .skill .prog {
+    @apply h-8 bg-[#eee];
+  }
+  .our-skills .skill .prog span {
+    @apply block h-full relative bg-main;
+  }
+  .our-skills .skill .prog span::before {
+    content: attr(data-progress);
+    @apply absolute border-2 border-gray-400 rounded-md text-main text-center -top-11.5 -right-4 py-1 px-0 w-10;
+  }
+  .our-skills .skill .prog span::after {
+    content: '';
+    @apply absolute border-10 border-[#99a1af_transparent_transparent_transparent] -right-1.75 -top-4;
+  }
+  .how {
+    @apply py-25 relative bg-[#ececec];
+  }
+  .how .container {
+    @apply flex flex-col lg:flex-row gap-12 items-center;
+  }
+  .how .works {
+    @apply flex flex-col gap-4;
+  }
+  .how .box {
+    @apply flex flex-col text-center md:text-start gap-6 md:flex-row relative bg-gray-50 p-4 border-2 border-white items-center overflow-hidden rounded-md hover:before:h-full hover:before:w-full z-1;
+  }
+  .how .box::before {
+    content: '';
+    @apply absolute bg-gray-200/50 left-1/2 top-1/2 w-0 h-0 -translate-1/2 duration-300 -z-1;
+  }
+  .how .box img {
+    @apply w-16 h-16;
+  }
+  .how .box h4 {
+    @apply text-xl font-bold mb-4;
+  }
+  .how .box p {
+    @apply text-lg;
+  }
+  .events {
+    @apply py-25 relative;
+  }
+  .events .container {
+    @apply flex gap-8 items-center flex-wrap;
+  }
+  .events .container > img {
+    @apply max-w-100 hidden lg:block;
+  }
+  .events .info {
+    @apply flex-1;
+  }
+  .events .counter {
+    @apply flex gap-4 items-center justify-center my-5 mx-auto;
+  }
+  .events .time {
+    @apply flex flex-col border text-4xl font-bold rounded-md border-gray-400 px-2 pt-4 text-main duration-300 hover:border-main text-center;
+  }
+  .events .time:hover span {
+    @apply border-main;
+  }
+  .events .time span {
+    @apply block text-black text-sm mt-4 py-2 px-2 border-t border-gray-400 duration-300;
+  }
+  .events .text {
+    @apply text-center;
+  }
+  .events .text h3 {
+    @apply font-bold text-3xl mb-4;
+  }
+  .events .text p {
+    @apply text-gray-500 text-lg;
+  }
+  .events .sub {
+    @apply w-full mt-18;
+  }
+  .events .sub form {
+    @apply flex flex-col max-w-full md:flex-row w-150 my-5 mx-auto p-5 md:py-8 md:px-10 bg-gray-200/80 rounded-xl md:rounded-full gap-5;
+  }
+  .events .sub form input {
+    @apply first:p-5 first:rounded-xl md:first:rounded-full first:flex-1 first:bg-white caret-main first:focus:outline-0 first:focus:placeholder:opacity-0 first:placeholder:duration-300 last:rounded-full last:bg-main last:font-bold last:text-white last:cursor-pointer last:p-5 last:hover:bg-main-alt;
+  }
+  .pricing {
+    @apply py-25 relative bg-[#ececec];
+  }
+  .pricing .container {
+    @apply grid sm:grid-cols-2 lg:grid-cols-3 justify-center;
+  }
+  .pricing .price {
+    @apply relative flex flex-col bg-white shadow-xl items-center py-4 mt-4 w-72 z-1 before:left-0 before:top-0 after:right-0 after:bottom-0 hover:before:w-full hover:after:w-full;
+  }
+  .pricing .price::before,
+  .pricing .price::after{
+    content: "";
+    @apply h-1/2 bg-gray-100 absolute -z-1 w-0 duration-300
+  }
+  .pricing .popular {
+    @apply relative xl:-translate-y-5
+  }
+  .pricing .label {
+    writing-mode: vertical-rl; 
+    @apply absolute bg-main py-2 text-white font-bold p-[10px_10px_35px_10px] top-0  text-lg right-5 w-11
+  }
+  .pricing .label::before {
+    content: "";
+    @apply absolute bottom-0 right-0 border-20 border-[transparent_transparent_white_transparent]
+  }
+  .pricing .price h3 {
+    @apply font-extrabold text-2xl p-4
+  }
+  .pricing .price .icon {
+    @apply text-main items-center w-18 h-18 m-0;
+  }
+  .pricing .price .cost {
+    @apply text-main text-5xl font-extrabold mt-4 mb-2
+  }
+  .pricing .time {
+    @apply text-gray-500;
+  }
+  .pricing .price .spics {
+    @apply mt-4 w-full
+  }
+  .pricing .price .spics span {
+    @apply block border-t border-gray-300/50 py-2 pl-4;
+  }
+  .pricing .price .spics .icon {
+    @apply w-6 h-6 mr-1
+  }
+  .pricing .price button {
+    @apply p-3 border m-4 cursor-pointer border-main text-main font-bold rounded-sm hover:bg-main-alt hover:text-white duration-300
+  }
+  .videos {
+    @apply py-25 relative bg-white;
+  }
+  .videos .container {
+    @apply flex flex-col px-0 lg:flex-row bg-[#ececec];
+  }
+  .videos .sidebar {
+    @apply flex flex-col px-0 mx-0;
+  }
+  .videos .sidebar .head {
+    @apply flex justify-between h-14 p-4 font-bold bg-gray-100 border border-[#ececec]
+  }
+  .videos .sidebar span {
+    @apply block 
+  }
+  .videos .sidebar li {
+    @apply h-24 py-6 px-4 border border-[#ececec] bg-white -mt-px hover:cursor-pointer hover:bg-white/50 hover:text-main duration-300
+  }
+  .videos .sidebar li span {
+    @apply mt-2 text-gray-500
+  }
+  .videos .display {
+    @apply flex flex-col justify-between p-4;
+  }
+  .videos .display p {
+    @apply bg-white p-4 font-semibold;
+  }
+  .stats {
+      @apply py-25 relative bg-[url(imgs/stats.jpg)] bg-cover max-h-300 z-1;
+    }
+    .stats::before {
+      content: "";
+      @apply absolute top-0 left-0 w-full h-full bg-gray-50/90 -z-1
+    }
+    .stats h2 {
+        @apply flex justify-center mb-10 mt-0 text-4xl font-bold;
+    }
+    .stats .container {
+    @apply relative grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center;
+  }
+  .stats .box::before,
+  .stats .box::after {
+    content: "";
+    @apply w-[2px] h-0 absolute bg-main duration-1000;
+  }
+  .stats .box {
+    @apply relative bg-gray-50/80 space-y-1 px-20 py-15 text-center justify-center before:left-0 before:bottom-0 hover:after:h-full hover:before:h-full after:right-0 after:top-0;
+  }
+  .stats .box span {
+    @apply text-5xl font-black
+  }
+  .stats .box h4 {
+    @apply text-main font-bold text-xl italic
+  }
+  .discount {
+    @apply w-full
+  }
+  .discount .container {
+    @apply mx-0 px-0 min-w-full flex flex-col md:flex-row justify-between;
+  }
+  .discount .text {
+    @apply flex flex-col gap-10 py-25 px-10 bg-main md:w-1/2 text-center items-center text-white
+  }
+  .discount .text h2 {
+    @apply text-4xl font-black tracking-tighter
+  }
+  .discount .text p {
+    @apply text-lg font-bold
+  }
+  .discount .text img {
+    @apply w-75 max-w-full
+  }
+  .discount .form {
+    @apply  md:w-1/2 py-25 items-center flex flex-col
+  }
+  .discount .form h2 {
+    @apply text-4xl font-extrabold
+  }
+  .discount .form form {
+    @apply  flex flex-col gap-6 mt-6 w-80
+  }
+  .discount form .input {
+    @apply bg-stone-200/30 p-4 text-start items-center border-b border-gray-300 focus:outline-none caret-main 
+  }
+  .discount form textarea {
+    @apply resize-none min-h-50;
+  }
+  .discount form [type="submit"]{
+    @apply bg-main py-2 font-bold text-white text-xl hover:bg-main-alt hover:cursor-pointer duration-300
+  }
+  .footer {
+    @apply relative pt-25 text-gray-400 bg-gray-900
+  }
+  .footer .container {
+    @apply grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-20 px-20
+  }
+  .footer .container .box {
+    @apply flex flex-col items-center lg:items-start
+  }
+  .footer h1 {
+    @apply text-5xl mb-4 text-white font-extrabold
+  }
+  .footer .box .social {
+    @apply bg-slate-800 mr-2 mb-4 h-10 w-10 p-1 inline duration-300;
+  }
+  .footer .box p {
+    @apply leading-7 text-center lg:text-start
+  }
+  .footer .links ul {
+    @apply w-50
+  }
+  .footer .links ul li {
+    @apply py-2 border-b border-gray-700 font-bold last:border-none hover:text-white hover:pl-4 duration-300
+  }
+  .footer .loc ul li {
+    @apply flex gap-2 text-xl mb-4 items-center
+  }
+  .footer .loc ul li .icon {
+    @apply w-12 h-12 text-main
+  }
+  .footer .box img {
+    @apply border-4 border-white w-20 h-20 m-1
+  }
+  .footer > p {
+    @apply text-center py-4 text-white font-bold text-xl border-t border-gray-800
+  }
+}

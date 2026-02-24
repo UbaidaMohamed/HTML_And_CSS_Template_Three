@@ -148,6 +148,7 @@
             </div>
         </div>
     </div>
+    <div class="spikes"></div>
 </template>
 
 <script setup>
